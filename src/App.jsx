@@ -1,21 +1,16 @@
-import {component} from 'react'
-class App extends Component {
-  state = {
-    count : 0
+import { useState } from "react";
+
+
+function App() {
+  const [text,setText] = useState("")
+  const changeValue = (event) => {
+    setText(event.target.value);
   }
-
-
-      
-render() {
-  return (
+  return(
     <>
-   
-    <h1>count : {this.state.count}</h1>
-    <button onclick={this.increase}>increment</button>
-     </>
+    <input type="text" onChange={changeValue}  value = {text}/>
+    <p>{text}</p>
+    </>
   )
-
-}
-}
-
-export default  App
+ }
+ export default App
